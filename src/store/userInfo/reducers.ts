@@ -1,12 +1,12 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { ILocationStore } from 'store/type';
+import { ILocationStore, IUserInfoStore } from 'store/type';
 
 const reducers = {
   setLocation: (
-    _state: ILocationStore,
+    state: IUserInfoStore,
     action: PayloadAction<ILocationStore>
   ) => {
-    return action.payload;
+    return { ...state, location: action.payload };
   },
 };
 

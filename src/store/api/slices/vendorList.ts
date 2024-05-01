@@ -1,0 +1,15 @@
+import { apiSlice } from '..';
+import { IVendorListReq, IVendorResult } from '../schema';
+
+export const VendorListSlice = apiSlice.injectEndpoints({
+  endpoints: (builder) => ({
+    getVendorList: builder.query<IVendorResult, IVendorListReq>({
+      query: (params) => ({
+        url: '/mobile/v3/restaurant/vendors-list',
+        params,
+      }),
+    }),
+  }),
+});
+
+export const { useGetVendorListQuery } = VendorListSlice;
