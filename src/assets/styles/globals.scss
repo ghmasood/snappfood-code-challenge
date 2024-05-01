@@ -1,0 +1,51 @@
+@import './fonts.scss';
+:root {
+  background-color: #e0e0e0;
+}
+html,
+body {
+  direction: rtl;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  font-family: iransansX, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  max-width: 48rem;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background-color: #f0f0f0;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+    background: #888;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #888;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 9999px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
