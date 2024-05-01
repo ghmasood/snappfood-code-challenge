@@ -1,10 +1,14 @@
-import '../assets/styles/globals.scss';
+import 'assets/styles/globals.scss';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
+import { Provider } from 'react-redux';
+import { store } from 'store';
 
 function App() {
   return (
-    <div style={{ textAlign: 'center', paddingTop: '10%' }}>
-      <img src='/logo.svg' width={'400'} />
-    </div>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   );
 }
 
