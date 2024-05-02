@@ -1,1 +1,51 @@
-//
+$primary: var(--c-primary);
+$white: var(--c-white);
+$pro: var(--c-pro);
+
+//BACKGROUNDS
+$bgMain: var(--c-bg-main);
+$bgBadge: var(--c-bg-badge);
+
+//TEXTS
+$tPrimary: var(--c-t-primary);
+$tLight: var(--c-t-light);
+$tLighter: var(--c-t-lighter);
+$tWhite: var(--c-t-white);
+$tBlack: var(--c-t-black);
+
+//ICON
+$iPrimary: var(--c-i-primary);
+
+//GRAY
+$gray: var(--c-gray);
+
+//SHADOWS
+$card-shadow: var(--card-shadow);
+$card-shadow-1: var(--card-shadow-1);
+$vendors-card-shadow: var(--vendors-card-shadow);
+$card-shadow-2: var(--card-shadow-2);
+$card-shadow-3: var(--card-shadow-3);
+
+//TYPOGRAPHY
+$text-xxx-small: var(--text-xxx-small);
+$text-xx-small: var(--text-xx-small);
+$text-x-md-small: var(--text-x-md-small);
+$text-x-small: var(--text-x-small);
+$text-x-mid-small: var(--text-x-mid-small);
+$text-x-avr-small: var(--text-x-avr-small);
+$text-small: var(--text-small);
+$text-medium: var(--text-medium);
+$text-size: var(--text-size);
+$text-large: var(--text-large);
+$text-m-large: var(--text-m-large);
+$text-x-large: var(--text-x-large);
+$text-xx-large: var(--text-xx-large);
+$text-xxx-large: var(--text-xxx-large);
+$text-xxxx-large: var(--text-xxxx-large);
+
+$font-ultraLight: var(--font-ultraLight);
+$font-light: var(--font-light);
+$font-regular: var(--font-regular);
+$font-medium: var(--font-medium);
+$font-bold: var(--font-bold);
+$font-bolder: var(--font-bolder);

@@ -1,7 +1,11 @@
+@import './helpers/variables';
+@import './vars.scss';
 @import './fonts.scss';
+
 :root {
-  background-color: #e0e0e0;
+  background-color: $gray;
 }
+
 html,
 body {
   direction: rtl;
@@ -13,17 +17,18 @@ body {
   max-width: 48rem;
   margin: 0 auto;
   min-height: 100dvh;
-  background-color: #f0f0f0;
-
+  background-color: $bgMain;
+  // font-size: $text-small;
+  color: $tPrimary;
   /* width */
   &::-webkit-scrollbar {
     width: 5px;
-    background: #888;
+    background: $bgMain;
   }
 
   /* Track */
   &::-webkit-scrollbar-track {
-    background: #888;
+    background: $bgMain;
   }
 
   /* Handle */

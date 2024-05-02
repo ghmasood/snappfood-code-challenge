@@ -1,0 +1,20 @@
+@import '/src/assets/styles/helpers/variables';
+
+.button {
+  position: relative;
+  background-color: $primary;
+  font-weight: $font-bold;
+  color: $tWhite;
+  font-size: $text-large;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 400ms;
+  &:hover {
+    background-color: $pro;
+  }
+}
