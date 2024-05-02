@@ -1,0 +1,13 @@
+@import '/src/assets/styles/helpers/variables';
+.main {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

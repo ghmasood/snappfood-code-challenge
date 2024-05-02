@@ -24,6 +24,7 @@ export interface IVendorItem {
   menuUrl: string;
 
   rate: number;
+  rating: number;
   voteCount: number;
 
   discountValueForView: number;
@@ -34,8 +35,9 @@ export interface IVendorItem {
   has_first_coupon: boolean; //تخفیف سفارش اول
   is_pro: boolean; //فودپرو
   is_eco: boolean; //خوش‌قیمت
+  preOrderEnabled: boolean; // رستوران بسته است / فقط پیش سفارش
   best_coupon: string | null;
-  
+
   isZFExpress: boolean; //پیک اسنپ‌فود
   deliveryFee: number;
 }

@@ -1,0 +1,12 @@
+@import '/src/assets/styles/helpers/variables';
+
+.headerList {
+  padding: 0.5rem 0.75rem;
+  box-shadow: $card-shadow-3;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  &__count {
+    font-weight: 600;
+  }
+}

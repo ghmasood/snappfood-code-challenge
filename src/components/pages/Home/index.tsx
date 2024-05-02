@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function HomePage() {
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
       <span className={styles.main__description}>
         برای مشاهده لیست رستوران‌ها، از طریق دکمه زیر به صفحه آن بروید.
       </span>
@@ -31,7 +31,7 @@ function HomePage() {
           <span>Developed By ghmasood</span>
         </a>
       </div>
-    </main>
+    </div>
   );
 }
 
