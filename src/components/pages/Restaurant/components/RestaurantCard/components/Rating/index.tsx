@@ -1,5 +1,3 @@
-import clsx from 'clsx';
-
 interface IRatingProps {
   className?: string;
   voteCount: number;
@@ -7,7 +5,7 @@ interface IRatingProps {
   isNew: boolean;
 }
 
-function Rating({ className = '', isNew, rate, voteCount }: IRatingProps) {
+function Rating({ isNew, rate, voteCount }: IRatingProps) {
   return isNew ? (
     <>جدید</>
   ) : (

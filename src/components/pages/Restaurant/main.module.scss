@@ -1,9 +1,11 @@
 @import '/src/assets/styles/helpers/variables';
 .main {
-  padding: 0.75rem;
+  padding: 0 0.75rem;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
+  height: 100dvh;
 
   &__cardsContainer {
     display: flex;

@@ -1,7 +1,7 @@
 import BasicButton from 'components/UI/BasicButton';
-import Icon from 'components/UI/Icon';
 import styles from './main.module.scss';
 import { Link } from 'react-router-dom';
+import Brand from 'components/UI/Brand';
 
 function HomePage() {
   return (
@@ -14,7 +14,7 @@ function HomePage() {
           دیدن رستوران‌ها
         </BasicButton>
       </Link>
-      <Icon className={styles.main__icon} />
+      <Brand variant='icon' className={styles.main__icon} />
       <div className={styles.main__developer}>
         <a href='https://github.com/ghmasood'>
           <svg
