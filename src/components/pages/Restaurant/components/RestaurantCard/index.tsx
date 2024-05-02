@@ -3,6 +3,9 @@ import styles from './restaurantCard.module.scss';
 import clsx from 'clsx';
 import Rating from './components/Rating';
 import DiscountBadge from './components/DiscountBadge';
+import CouponsList from './components/CouponsList';
+import { icons } from 'utils/icons';
+import RestaurantCover from './components/Cover';
 
 interface IRestaurantCardProps {
   className?: string;
@@ -12,7 +15,12 @@ interface IRestaurantCardProps {
 function RestaurantCard({ className = '', data }: IRestaurantCardProps) {
   return (
     <div className={clsx([styles.card, className])}>
-      <img src={data.backgroundImage} className={styles.card__cover} />
+      <RestaurantCover
+        coverSrc={data.backgroundImage}
+        proText={data.is_pro ? data.best_coupon ?? '' : ''}
+        isAd={data.bid}
+        className={styles.card__cover}
+      />
       <div className={styles.card__container}>
         <img src={data.logo} className={styles.card__logo} />
         <div className={styles.card__nameRating}>
@@ -30,11 +38,20 @@ function RestaurantCard({ className = '', data }: IRestaurantCardProps) {
         </div>
         <span className={styles.card__description}>{data.description}</span>
         <div className={styles.card__delivery}>
-          <span>{data.isZFExpress ? 'پیک اسنپ فود:' : 'پیک فروشنده:'}</span>
-          <span>{data.deliveryFee.toLocaleString()}</span>
-          <span>تومان</span>
+          {data.isZFExpress && icons.driverHat()}
+          <span>{data.isZFExpress ? 'پیک اسنپ فود:' : 'پیک رستوران:'}</span>
+          <span>
+            {data?.deliveryFee
+              ? data.deliveryFee.toLocaleString() + ' تومان'
+              : 'رایگان'}
+          </span>
         </div>
-        <div>coupens</div>
+        <CouponsList
+          isEco={data.is_eco}
+          cashback={data.has_cashback}
+          couponCount={data.coupon_count}
+          firstBuy={data.has_first_coupon}
+        />
       </div>
     </div>
   );

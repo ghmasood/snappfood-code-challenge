@@ -3,6 +3,7 @@
   display: flex;
   gap: 0.25rem;
   justify-items: center;
+  flex-shrink: 0;
   &__rate {
     display: flex;
     align-items: center;

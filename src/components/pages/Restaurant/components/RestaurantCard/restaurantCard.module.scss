@@ -8,18 +8,19 @@
   &__cover {
     width: 100%;
     height: 7.125rem;
-    object-fit: cover;
-    border-radius: 0.5rem;
   }
   &__container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-top: 0.75rem;
+    margin-top: 1rem;
   }
   &__description {
     font-size: 0.75rem;
     color: $tLight;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   &__nameRating {
     display: flex;
@@ -33,6 +34,9 @@
     :first-child {
       font-weight: $font-medium;
       font-size: $text-medium;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
   &__logo {

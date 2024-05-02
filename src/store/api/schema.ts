@@ -29,17 +29,18 @@ export interface IVendorItem {
 
   discountValueForView: number;
 
-  has_coupon: boolean; //دارای کوپن
-  has_cashback: boolean; //جایزه خرید
+  has_coupon: boolean; //دارای کوپن ------- done
+  has_cashback: boolean; //جایزه خرید ----- done
   has_discount: boolean; //دارای تخفیف
-  has_first_coupon: boolean; //تخفیف سفارش اول
+  coupon_count: number; //دارای n کوپن ---- done
+  has_first_coupon: boolean; //تخفیف سفارش اول -- done
   is_pro: boolean; //فودپرو
-  is_eco: boolean; //خوش‌قیمت
+  is_eco: boolean; //خوش‌قیمت --- done
   preOrderEnabled: boolean; // رستوران بسته است / فقط پیش سفارش
   bid: boolean; //آگهی بج
   best_coupon: string | null;
 
-  isZFExpress: boolean; //پیک اسنپ‌فود
+  isZFExpress: boolean; //پیک اسنپ‌فود --- done
   deliveryFee: number;
 }
 
