@@ -1,0 +1,15 @@
+@import '/src/assets/styles/helpers/variables';
+
+.badge {
+  background-color: $primary;
+  color: $tWhite;
+  border-radius: 0.25rem;
+  padding: 1px 3px;
+  font-size: $text-small;
+  font-weight: $font-medium;
+
+  &__to {
+    font-size: $text-x-small !important;
+    font-weight: $font-regular !important;
+  }
+}

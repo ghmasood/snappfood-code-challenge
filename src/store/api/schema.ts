@@ -36,6 +36,7 @@ export interface IVendorItem {
   is_pro: boolean; //فودپرو
   is_eco: boolean; //خوش‌قیمت
   preOrderEnabled: boolean; // رستوران بسته است / فقط پیش سفارش
+  bid: boolean; //آگهی بج
   best_coupon: string | null;
 
   isZFExpress: boolean; //پیک اسنپ‌فود
@@ -44,7 +45,11 @@ export interface IVendorItem {
 
 export type IVendorCardData =
   | { type: 'TEXT'; data: string }
-  | { type: 'VENDOR'; data: IVendorItem };
+  | { type: 'VENDOR'; data: IVendorItem }
+  | {
+      type: 'BANNER';
+      data: { image: string; deepLink: string };
+    };
 
 export interface IVendorListData {
   finalResult: IVendorCardData[];

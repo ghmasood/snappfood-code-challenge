@@ -5,7 +5,7 @@ export const VendorListSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getVendorList: builder.query<IVendorResult, IVendorListReq>({
       query: (params) => ({
-        url: '/mobile/v3/restaurant/vendors-list',
+        url: '/mobile/v3/restaurant/vendors-list?&filters={"superType":[1]}',
         params,
       }),
     }),

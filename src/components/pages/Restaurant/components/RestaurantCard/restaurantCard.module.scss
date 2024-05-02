@@ -26,6 +26,15 @@
     justify-content: space-between;
     align-items: center;
   }
+  &__nameDiscount {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    :first-child {
+      font-weight: $font-medium;
+      font-size: $text-medium;
+    }
+  }
   &__logo {
     position: absolute;
     top: 4rem;

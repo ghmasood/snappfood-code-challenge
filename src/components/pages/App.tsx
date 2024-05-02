@@ -7,7 +7,6 @@ import ENV from 'utils/environments';
 
 function App() {
   console.log(`MODE: ${ENV.MODE}`);
-
   return (
     <Provider store={store}>
       <RouterProvider router={router} />

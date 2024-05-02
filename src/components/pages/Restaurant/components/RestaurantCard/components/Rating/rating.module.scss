@@ -1,0 +1,25 @@
+@import '/src/assets/styles/helpers/variables';
+.main {
+  display: flex;
+  gap: 0.25rem;
+  justify-items: center;
+  &__rate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.125rem;
+    padding: 0 0.25rem;
+    background-color: $bgBadge;
+    border-radius: 0.25rem;
+    font-weight: $font-medium;
+    font-size: $text-small;
+  }
+  &__vote {
+    font-size: $text-small;
+    font-weight: $font-regular;
+    color: $tLighter;
+    :nth-child(2) {
+      color: $tLight !important;
+    }
+  }
+}
