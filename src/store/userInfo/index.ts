@@ -4,8 +4,8 @@ import reducers from './reducers';
 
 export const userInfoInitialState: IUserInfoStore = {
   location: {
-    lat: 35.774,
-    long: 51.418,
+    lat: 35.77364,
+    long: 51.41831,
   },
 };
 
