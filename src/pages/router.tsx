@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter } from 'react-router-dom';
 import { lazy } from 'react';
 import Layout from 'layouts';

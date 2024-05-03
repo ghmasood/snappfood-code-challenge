@@ -63,7 +63,9 @@
     height: 100%;
     opacity: 0;
     filter: blur(10px);
-    transition: opacity 0.3s ease, filter 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      filter 0.3s ease;
     object-fit: cover;
     object-position: 50% 0;
     &-loaded {
