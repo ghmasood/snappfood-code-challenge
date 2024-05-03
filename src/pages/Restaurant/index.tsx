@@ -27,10 +27,10 @@ function RestaurantPage() {
     if (!isGeoLoading && lat && long) {
       dispatch(setLocation({ lat: lat, long: long }));
     }
-  }, [lat, long, isGeoLoading]);
+  }, [lat, long, isGeoLoading, dispatch]);
 
   //RTK QUERY
-  const { isLoading, isFetching } = useGetVendorListQuery(apiQuery, { skip: isGeoLoading });
+  const { isLoading, isFetching, isError } = useGetVendorListQuery(apiQuery, { skip: isGeoLoading });
 
   //REF
   const parentRef = useRef<HTMLDivElement>(null);
@@ -40,15 +40,18 @@ function RestaurantPage() {
   const virtualizer = useVirtualizer({
     count,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 252,
+    estimateSize: () => 219,
     overscan: 2,
   });
 
   const virtualizedVendorList = virtualizer.getVirtualItems();
 
+  //VARIABLES
+  const isEnableObserver = isLoading || isFetching || isError || isGeoLoading;
+
   //LOGICS
   const onView = () => {
-    if (!isFetching) dispatch(setPage(apiQuery.page + 1));
+    dispatch(setPage(apiQuery.page + 1));
   };
 
   return (
@@ -66,12 +69,8 @@ function RestaurantPage() {
           }}
         >
           {virtualizedVendorList?.map((virtualRow) =>
-            isLoading || isGeoLoading ? (
-              <RestaurantCardLoading
-                key={virtualRow.key}
-                data-index={virtualRow.index}
-                ref={virtualizer.measureElement}
-              />
+            isLoading ? (
+              <RestaurantCardLoading key={virtualRow.key} data-index={virtualRow.index} />
             ) : (
               <ListItem
                 key={virtualRow.key}
@@ -82,7 +81,7 @@ function RestaurantPage() {
             )
           )}
 
-          <EndPageObserver onView={onView} isLoading={isLoading} />
+          <EndPageObserver onView={onView} isEnable={isEnableObserver} />
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import { apiSlice } from './api';
+import { rtkQueryErrorLogger } from './api/middleware/error';
 import { apiQueryReducer } from './apiQuery';
 import { vendorsReducer } from './vendors';
 
@@ -14,7 +15,7 @@ const rootReducer = combineReducers({
 
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware).concat(rtkQueryErrorLogger),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

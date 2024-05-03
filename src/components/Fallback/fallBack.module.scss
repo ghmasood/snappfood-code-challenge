@@ -18,7 +18,7 @@
   &__spinner {
     transform: scale(0.75);
     > div {
-      border-color: $white transparent transparent transparent;
+      border-color: $white transparent transparent transparent !important;
     }
   }
 }

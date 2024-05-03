@@ -4,14 +4,14 @@ import RestaurantCardLoading from '../ResturantCardLoading';
 
 interface IEndPageObserverProps {
   onView: () => void;
-  isLoading: boolean;
+  isEnable: boolean;
 }
 
-function EndPageObserver({ onView, isLoading }: IEndPageObserverProps) {
+function EndPageObserver({ onView, isEnable }: IEndPageObserverProps) {
   const loadingCardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isLoading) return;
+    if (isEnable) return;
     const refEl = loadingCardRef?.current;
     const observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
@@ -21,7 +21,7 @@ function EndPageObserver({ onView, isLoading }: IEndPageObserverProps) {
     return () => {
       if (refEl) observer.disconnect();
     };
-  }, [loadingCardRef, isLoading, onView]);
+  }, [loadingCardRef, isEnable, onView]);
 
   return <RestaurantCardLoading ref={loadingCardRef} />;
 }
