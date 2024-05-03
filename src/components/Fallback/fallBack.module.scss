@@ -1,0 +1,24 @@
+@import '/src/assets/styles/helpers/variables';
+
+.fallback {
+  background-color: $primary;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+
+  &__logo {
+    width: 50%;
+    fill: $white;
+  }
+
+  &__spinner {
+    transform: scale(0.75);
+    > div {
+      border-color: $white transparent transparent transparent;
+    }
+  }
+}
