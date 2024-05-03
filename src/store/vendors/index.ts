@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { vendorListApiSlice } from 'store/api/slices/vendorList';
 import { IVendorsStore } from 'store/type';
 

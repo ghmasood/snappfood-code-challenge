@@ -1,22 +1,36 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { setPage, useAppDispatch, useAppSelector } from 'store';
+
+import { setLocation, setPage, useAppDispatch, useAppSelector } from 'store';
 import { useGetVendorListQuery } from 'store/api/slices/vendorList';
+
+import useLocation from 'hooks/useLocation';
 
 import EndPageObserver from './components/EndPageObserver';
 import ListItem from './components/ListItem';
 import RestaurantCardLoading from './components/ResturantCardLoading';
+
 import styles from './main.module.scss';
 
 function RestaurantPage() {
+  //LOCATION HOOK
+  const { lat, long, loading: isGeoLoading } = useLocation();
+
   //STORE
   const apiQuery = useAppSelector((store) => store.apiQuery);
   const vendorList = useAppSelector((store) => store.vendors.vendors);
   const dispatch = useAppDispatch();
 
+  //LIFE CYCLE METHODS
+  useEffect(() => {
+    if (!isGeoLoading && lat && long) {
+      dispatch(setLocation({ lat: lat, long: long }));
+    }
+  }, [lat, long, isGeoLoading]);
+
   //RTK QUERY
-  const { isLoading, isFetching } = useGetVendorListQuery(apiQuery);
+  const { isLoading, isFetching } = useGetVendorListQuery(apiQuery, { skip: isGeoLoading });
 
   //REF
   const parentRef = useRef<HTMLDivElement>(null);
@@ -52,7 +66,7 @@ function RestaurantPage() {
           }}
         >
           {virtualizedVendorList?.map((virtualRow) =>
-            isLoading ? (
+            isLoading || isGeoLoading ? (
               <RestaurantCardLoading
                 key={virtualRow.key}
                 data-index={virtualRow.index}

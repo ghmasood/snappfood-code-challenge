@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 
-import BasicButton from 'components/BasicButton';
-import Brand from 'components/Brand';
-import strings from 'pages/Home/strings.json';
 import { icons } from 'utils/icons';
 
+import BasicButton from 'components/BasicButton';
+import Brand from 'components/Brand';
+
 import styles from './main.module.scss';
+
+import strings from 'pages/Home/strings.json';
 
 function HomePage() {
   return (

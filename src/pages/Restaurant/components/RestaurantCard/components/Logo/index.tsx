@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import clsx from 'clsx';
+
 import { icons } from 'utils/icons';
 
 import styles from './logo.module.scss';

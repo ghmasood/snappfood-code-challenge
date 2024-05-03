@@ -1,7 +1,9 @@
 import { forwardRef } from 'react';
 
 import clsx from 'clsx';
+
 import type { IVendorItem } from 'store/api/schema';
+
 import { icons } from 'utils/icons';
 
 import CouponsList from './components/CouponsList';
@@ -9,6 +11,7 @@ import RestaurantCover from './components/Cover';
 import DiscountBadge from './components/DiscountBadge';
 import RestaurantLogo from './components/Logo';
 import Rating from './components/Rating';
+
 import styles from './restaurantCard.module.scss';
 
 interface IRestaurantCardProps {

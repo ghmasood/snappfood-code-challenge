@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { IVendorListReq } from 'store/api/schema';
 
 import reducers from './reducers';

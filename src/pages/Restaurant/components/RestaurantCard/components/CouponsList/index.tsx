@@ -1,7 +1,9 @@
 import clsx from 'clsx';
+
 import { icons } from 'utils/icons';
 
 import CouponItem from './components/CouponItem';
+
 import styles from './couponsList.module.scss';
 
 interface ICouponsListProps {

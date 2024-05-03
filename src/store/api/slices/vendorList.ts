@@ -1,4 +1,5 @@
 import { apiSlice } from '..';
+
 import { IVendorListReq, IVendorResult } from '../schema';
 
 export const vendorListApiSlice = apiSlice.injectEndpoints({

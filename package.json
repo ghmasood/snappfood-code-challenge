@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "prettier --write **/*.{js,ts,tsx,css,md,json,scss} --config ./.prettierrc && tsc && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write **/*.{js,ts,tsx,css,md,json,scss} --config ./.prettierrc",
+    "format": "prettier --write . --config ./.prettierrc",
     "preview": "vite preview"
   },
   "dependencies": {

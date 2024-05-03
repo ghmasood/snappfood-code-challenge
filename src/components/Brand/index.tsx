@@ -1,8 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import Icon from './icon.svg?react';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import Logo from './logo.svg?react';
 
 interface IIconProps {
