@@ -1,7 +1,9 @@
-import type { IVendorCardData } from 'store/api/schema';
-import RestaurantCard from '../RestaurantCard';
-import ListHeader from '../ListHeader';
 import { forwardRef } from 'react';
+
+import type { IVendorCardData } from 'store/api/schema';
+
+import ListHeader from '../ListHeader';
+import RestaurantCard from '../RestaurantCard';
 
 interface IListItemProps {
   className?: string;
@@ -16,11 +18,9 @@ const ListItem = forwardRef<HTMLDivElement, IListItemProps>(({ data }, ref) => {
       </div>
     );
 
-  if (data?.type === 'TEXT')
-    return <ListHeader ref={ref} headerText={data.data} />;
+  if (data?.type === 'TEXT') return <ListHeader ref={ref} headerText={data.data} />;
 
-  if (data?.type === 'VENDOR')
-    return <RestaurantCard ref={ref} data={data.data} />;
+  if (data?.type === 'VENDOR') return <RestaurantCard ref={ref} data={data.data} />;
 
   return;
 });

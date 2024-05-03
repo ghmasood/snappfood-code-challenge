@@ -1,7 +1,8 @@
 import clsx from 'clsx';
-import styles from './couponsList.module.scss';
-import CouponItem from './components/CouponItem';
 import { icons } from 'utils/icons';
+
+import CouponItem from './components/CouponItem';
+import styles from './couponsList.module.scss';
 
 interface ICouponsListProps {
   className?: string;
@@ -11,20 +12,12 @@ interface ICouponsListProps {
   isFirstBuy: boolean;
 }
 
-function CouponsList({
-  className = '',
-  isEco,
-  isCashback,
-  couponCount,
-  isFirstBuy,
-}: ICouponsListProps) {
+function CouponsList({ className = '', isEco, isCashback, couponCount, isFirstBuy }: ICouponsListProps) {
   if (!(isEco || isCashback || isFirstBuy || !!couponCount)) return;
   return (
     <div className={clsx([styles.list, className])}>
       {!!couponCount && <CouponItem title={`دارای ${couponCount} کوپن`} />}
-      {isCashback && (
-        <CouponItem title={'جایزه خرید'} icon={icons.cashback()} />
-      )}
+      {isCashback && <CouponItem title={'جایزه خرید'} icon={icons.cashback()} />}
       {isEco && <CouponItem title={'خوش قیمت'} icon={icons.eco()} />}
       {isFirstBuy && <CouponItem title={'تخفیف سفارش اول'} />}
     </div>

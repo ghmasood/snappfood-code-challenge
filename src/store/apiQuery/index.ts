@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import reducers from './reducers';
 import { IVendorListReq } from 'store/api/schema';
+
+import reducers from './reducers';
 
 export const apiQueryInitialState: IVendorListReq = {
   lat: 35.77364,

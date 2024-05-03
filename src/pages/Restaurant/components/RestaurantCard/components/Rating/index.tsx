@@ -1,5 +1,7 @@
 import { icons } from 'utils/icons';
+
 import styles from './rating.module.scss';
+
 interface IRatingProps {
   className?: string;
   voteCount: number;

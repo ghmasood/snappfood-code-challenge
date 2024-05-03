@@ -1,11 +1,13 @@
+import { useRef } from 'react';
+
+import { useVirtualizer } from '@tanstack/react-virtual';
 import { setPage, useAppDispatch, useAppSelector } from 'store';
 import { useGetVendorListQuery } from 'store/api/slices/vendorList';
-import styles from './main.module.scss';
-import { useRef } from 'react';
-import { useVirtualizer } from '@tanstack/react-virtual';
+
+import EndPageObserver from './components/EndPageObserver';
 import ListItem from './components/ListItem';
 import RestaurantCardLoading from './components/ResturantCardLoading';
-import EndPageObserver from './components/EndPageObserver';
+import styles from './main.module.scss';
 
 function RestaurantPage() {
   //STORE

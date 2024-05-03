@@ -1,5 +1,6 @@
-import { createBrowserRouter } from 'react-router-dom';
 import { lazy } from 'react';
+import { createBrowserRouter } from 'react-router-dom';
+
 import Layout from 'layouts';
 
 const HomePage = lazy(() => import('./Home'));

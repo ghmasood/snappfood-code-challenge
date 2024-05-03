@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+
 import RestaurantCardLoading from '../ResturantCardLoading';
 
 interface IEndPageObserverProps {

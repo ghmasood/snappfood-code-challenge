@@ -5,11 +5,7 @@ interface IIconProps {
 
 function Brand({ className = '', variant }: IIconProps) {
   return variant === 'icon' ? (
-    <svg
-      className={className}
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='149.58 0.97 17.65 37.37'
-    >
+    <svg className={className} xmlns='http://www.w3.org/2000/svg' viewBox='149.58 0.97 17.65 37.37'>
       <g id='Layer_2' data-name='Layer 2'>
         <g id='Layer_1-2' data-name='Layer 1'>
           <path d='M155.28,24.53c-.75,0-1.51,0-2.26,0s-.74-.17-.58-.76c.75-2.8,1.45-5.61,2.17-8.42,1.15-4.51,2.32-9,3.45-13.53.15-.6.36-.86,1-.85,2.52.05,5,0,7.54,0,.57,0,.72.12.57.72-1.58,6.18-3.12,12.37-4.7,18.56A5.33,5.33,0,0,1,157,24.53Z'></path>
@@ -18,11 +14,7 @@ function Brand({ className = '', variant }: IIconProps) {
       </g>
     </svg>
   ) : variant === 'logo' ? (
-    <svg
-      className={className}
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 167.26 85.63'
-    >
+    <svg className={className} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 167.26 85.63'>
       <g id='Layer_2' data-name='Layer 2'>
         <g id='Layer_1-2' data-name='Layer 1'>
           <path d='M106.26,62.05v-.91c0-5.28,0-10.56,0-15.84,0-.66.17-.85.83-.83q3.65.06,7.29,0c.65,0,.78.19.78.8q0,19.36,0,38.73c0,.58-.15.76-.74.75-2.43,0-4.87,0-7.3,0-.56,0-.72-.18-.69-.72s0-1.23,0-1.84c-.07,0-.15,0-.16,0-2.23,2.92-5.32,3.62-8.74,3.3-6.88-.65-11.24-6.67-11.26-12.87,0-5.22,1.9-9.5,6.56-12.08a11.06,11.06,0,0,1,12,.36A17.46,17.46,0,0,1,106.26,62.05Zm.33,10.31A5.68,5.68,0,1,0,101,78,5.37,5.37,0,0,0,106.59,72.36Z'></path>

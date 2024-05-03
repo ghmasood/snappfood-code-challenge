@@ -1,5 +1,6 @@
-import styles from './discountBadge.module.scss';
 import clsx from 'clsx';
+
+import styles from './discountBadge.module.scss';
 
 interface IDiscountBadgeProps {
   className?: string;

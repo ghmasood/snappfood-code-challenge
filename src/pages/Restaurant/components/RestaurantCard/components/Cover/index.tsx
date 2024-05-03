@@ -1,7 +1,9 @@
 import { useState } from 'react';
+
 import clsx from 'clsx';
-import styles from './cover.module.scss';
 import { icons } from 'utils/icons';
+
+import styles from './cover.module.scss';
 
 interface IRestaurantCoverProps {
   className?: string;
@@ -11,13 +13,7 @@ interface IRestaurantCoverProps {
   isFullyClose: boolean;
 }
 
-function RestaurantCover({
-  className = '',
-  coverSrc,
-  proText,
-  isAd,
-  isFullyClose,
-}: IRestaurantCoverProps) {
+function RestaurantCover({ className = '', coverSrc, proText, isAd, isFullyClose }: IRestaurantCoverProps) {
   //STATES
   const [loaded, setLoaded] = useState(false);
   return (
@@ -35,9 +31,7 @@ function RestaurantCover({
           {icons.ad()}
         </div>
       )}
-      {isFullyClose && (
-        <div className={styles.cover__closedText}>رستوران بسته است</div>
-      )}
+      {isFullyClose && <div className={styles.cover__closedText}>رستوران بسته است</div>}
       <div className={styles.cover__imageContainer}>
         <img
           src={coverSrc}
