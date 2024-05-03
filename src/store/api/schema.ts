@@ -37,6 +37,7 @@ export interface IVendorItem {
   is_pro: boolean; //فودپرو
   is_eco: boolean; //خوش‌قیمت --- done
   preOrderEnabled: boolean; // رستوران بسته است / فقط پیش سفارش
+  isOpen: boolean;
   bid: boolean; //آگهی بج
   best_coupon: string | null;
 

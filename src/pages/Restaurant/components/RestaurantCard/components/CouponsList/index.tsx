@@ -18,6 +18,7 @@ function CouponsList({
   couponCount,
   isFirstBuy,
 }: ICouponsListProps) {
+  if (!(isEco || isCashback || isFirstBuy || !!couponCount)) return;
   return (
     <div className={clsx([styles.list, className])}>
       {!!couponCount && <CouponItem title={`دارای ${couponCount} کوپن`} />}

@@ -24,7 +24,7 @@ function RestaurantPage() {
   const virtualizer = useVirtualizer({
     count,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 220,
+    estimateSize: () => 252,
     overscan: 2,
   });
 
