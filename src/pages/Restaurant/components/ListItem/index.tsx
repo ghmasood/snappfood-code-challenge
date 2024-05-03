@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 
 import type { IVendorCardData } from 'store/api/schema';
 
+import Banner from '../Banner';
 import ListHeader from '../ListHeader';
 import RestaurantCard from '../RestaurantCard';
 
@@ -11,12 +12,7 @@ interface IListItemProps {
 }
 
 const ListItem = forwardRef<HTMLDivElement, IListItemProps>(({ data }, ref) => {
-  if (data?.type === 'BANNER')
-    return (
-      <div ref={ref}>
-        <img src={data.data.image} width={'100%'} />
-      </div>
-    );
+  if (data?.type === 'BANNER') return <Banner ref={ref} imageSrc={data.data.image} />;
 
   if (data?.type === 'TEXT') return <ListHeader ref={ref} headerText={data.data} />;
 
