@@ -23,11 +23,12 @@ function RestaurantPage() {
   const parentRef = useRef<HTMLDivElement>(null);
 
   //VIRTUAL LIST HOOK
-  const resCount = resultArr?.length ?? 0;
+  const count = resultArr?.length ?? 0;
   const virtualizer = useVirtualizer({
-    count: resCount,
+    count,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 10,
+    estimateSize: () => 220,
+    overscan: 2,
   });
 
   const virtualizedVendorList = virtualizer.getVirtualItems();
@@ -41,19 +42,18 @@ function RestaurantPage() {
         }}
       >
         <div
-          className={styles.main__container__l2}
+          className={styles.main__virtualScroll}
           style={{
             transform: `translateY(${virtualizedVendorList[0]?.start ?? 0}px)`,
           }}
         >
           {virtualizedVendorList?.map((virtualRow) => (
-            <div
+            <ListItem
               key={virtualRow.key}
               data-index={virtualRow.index}
               ref={virtualizer.measureElement}
-            >
-              <ListItem data={resultArr?.[virtualRow.index]} />
-            </div>
+              data={resultArr?.[virtualRow.index]}
+            />
           ))}
         </div>
       </div>

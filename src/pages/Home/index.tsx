@@ -1,25 +1,29 @@
-import BasicButton from 'components/UI/BasicButton';
+import BasicButton from 'components/BasicButton';
 import styles from './main.module.scss';
 import { Link } from 'react-router-dom';
-import Brand from 'components/UI/Brand';
+import Brand from 'components/Brand';
 import { icons } from 'utils/icons';
+import strings from 'pages/Home/strings.json';
 
 function HomePage() {
   return (
     <div className={styles.main}>
       <span className={styles.main__description}>
-        برای مشاهده لیست رستوران‌ها، از طریق دکمه زیر به صفحه آن بروید.
+        {strings.goToRestaurants}
       </span>
-      <Link to={'/restaurant'}>
+
+      <Link to='/restaurant'>
         <BasicButton className={styles.main__button}>
-          دیدن رستوران‌ها
+          {strings.seeRestaurants}
         </BasicButton>
       </Link>
+
       <Brand variant='icon' className={styles.main__icon} />
+
       <div className={styles.main__developer}>
         <a href='https://github.com/ghmasood'>
           {icons.github()}
-          <span>Developed By ghmasood</span>
+          <span>{strings.copyRight}</span>
         </a>
       </div>
     </div>

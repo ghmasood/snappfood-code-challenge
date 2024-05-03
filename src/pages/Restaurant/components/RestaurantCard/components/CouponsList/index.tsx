@@ -6,24 +6,26 @@ import { icons } from 'utils/icons';
 interface ICouponsListProps {
   className?: string;
   isEco: boolean;
-  cashback: boolean;
+  isCashback: boolean;
   couponCount: number;
-  firstBuy: boolean;
+  isFirstBuy: boolean;
 }
 
 function CouponsList({
   className = '',
   isEco,
-  cashback,
+  isCashback,
   couponCount,
-  firstBuy,
+  isFirstBuy,
 }: ICouponsListProps) {
   return (
     <div className={clsx([styles.list, className])}>
       {!!couponCount && <CouponItem title={`دارای ${couponCount} کوپن`} />}
-      {cashback && <CouponItem title={'جایزه خرید'} icon={icons.cashback()} />}
+      {isCashback && (
+        <CouponItem title={'جایزه خرید'} icon={icons.cashback()} />
+      )}
       {isEco && <CouponItem title={'خوش قیمت'} icon={icons.eco()} />}
-      {firstBuy && <CouponItem title={'تخفیف سفارش اول'} />}
+      {isFirstBuy && <CouponItem title={'تخفیف سفارش اول'} />}
     </div>
   );
 }

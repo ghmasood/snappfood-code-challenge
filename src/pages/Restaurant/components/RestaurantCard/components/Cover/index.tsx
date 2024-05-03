@@ -26,12 +26,14 @@ function RestaurantCover({
           {proText}
         </div>
       )}
+
       {isAd && (
         <div className={styles.cover__ad}>
           آگهی
           {icons.ad()}
         </div>
       )}
+
       <div className={styles.cover__imageContainer}>
         <img
           src={coverSrc}
