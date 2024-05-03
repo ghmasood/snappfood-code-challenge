@@ -1,0 +1,43 @@
+@import 'src/assets/styles/helpers/variables';
+.card {
+  position: relative;
+  padding: 0.25rem;
+
+  &__cover {
+    height: 7.125rem;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  &__logoContainer {
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+  }
+
+  &__logo {
+    height: 4rem;
+    width: 4rem;
+    overflow: hidden;
+    border-radius: 999rem;
+    display: flex;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  &__titleRate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 21px;
+  }
+}
+
+.fitWidth {
+  width: fit-content;
+  height: 18px;
+}

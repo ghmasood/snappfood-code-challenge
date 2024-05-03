@@ -7,6 +7,7 @@ import { icons } from 'utils/icons';
 import CouponsList from './components/CouponsList';
 import RestaurantCover from './components/Cover';
 import DiscountBadge from './components/DiscountBadge';
+import RestaurantLogo from './components/Logo';
 import Rating from './components/Rating';
 import styles from './restaurantCard.module.scss';
 
@@ -29,7 +30,13 @@ const RestaurantCard = forwardRef<HTMLDivElement, IRestaurantCardProps>(({ class
       />
 
       <div className={styles.card__container}>
-        <img src={data.logo} className={styles.card__logo} />
+        <RestaurantLogo
+          className={styles.card__logo}
+          profileSrc={data.logo}
+          isFullyClose={isFullyClose}
+          isPro={data.is_pro}
+        />
+
         <div className={styles.card__nameRating}>
           <div className={styles.card__nameDiscount}>
             <span>{data.title}</span>

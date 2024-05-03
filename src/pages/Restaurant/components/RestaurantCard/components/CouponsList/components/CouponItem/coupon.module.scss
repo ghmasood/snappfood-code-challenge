@@ -5,11 +5,11 @@
   align-items: center;
   gap: 0.25rem;
   background-color: $bgBadge;
-  padding: 0.1875rem 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-wrap: nowrap;
+  padding: 0.1875rem 0.25rem;
   font-size: $text-small;
   font-weight: $font-medium;
   border-radius: 0.25rem;
-  &__logo {
-    flex-shrink: 0;
-  }
 }
