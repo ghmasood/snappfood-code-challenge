@@ -1,7 +1,7 @@
 import { apiSlice } from '..';
 import { IVendorListReq, IVendorResult } from '../schema';
 
-export const VendorListSlice = apiSlice.injectEndpoints({
+export const vendorListApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getVendorList: builder.query<IVendorResult, IVendorListReq>({
       query: (params) => ({
@@ -12,4 +12,4 @@ export const VendorListSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetVendorListQuery } = VendorListSlice;
+export const { useGetVendorListQuery } = vendorListApiSlice;

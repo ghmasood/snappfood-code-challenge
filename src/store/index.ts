@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { apiSlice } from './api';
-import { userInfoReducer } from './userInfo';
+import { apiQueryReducer } from './apiQuery';
+import { vendorsReducer } from './vendors';
 
 const rootReducer = combineReducers({
-  userInfo: userInfoReducer,
+  apiQuery: apiQueryReducer,
+  vendors: vendorsReducer,
   [apiSlice.reducerPath]: apiSlice.reducer,
 });
 
@@ -20,4 +22,5 @@ export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-export * from './userInfo';
+export * from './apiQuery';
+export * from './vendors';

@@ -54,3 +54,43 @@ a {
   padding: 0;
   font-family: inherit;
 }
+
+//SKELETON
+.skeleton {
+  cursor: wait;
+  position: relative;
+  overflow: hidden;
+  background-color: #efefef !important;
+  color: #efefef !important;
+  border-radius: 0.25rem;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 5%,
+      rgba(0, 0, 0, 0.05) 20%,
+      rgba(0, 0, 0, 0.1) 35%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.1) 65%,
+      rgba(0, 0, 0, 0.05) 80%,
+      rgba(0, 0, 0, 0) 95%
+    );
+    animation: shimmer 3s infinite;
+    content: '';
+  }
+  & > * {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

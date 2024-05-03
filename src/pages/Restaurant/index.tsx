@@ -1,29 +1,26 @@
-import { useAppSelector } from 'store';
+import { setPage, useAppDispatch, useAppSelector } from 'store';
 import { useGetVendorListQuery } from 'store/api/slices/vendorList';
 import styles from './main.module.scss';
 import { useRef } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import ListItem from './components/ListItem';
+import RestaurantCardLoading from './components/ResturantCardLoading';
+import EndPageObserver from './components/EndPageObserver';
 
 function RestaurantPage() {
   //STORE
-  const location = useAppSelector((store) => store.userInfo.location);
+  const apiQuery = useAppSelector((store) => store.apiQuery);
+  const vendorList = useAppSelector((store) => store.vendors.vendors);
+  const dispatch = useAppDispatch();
 
   //RTK QUERY
-  const { data } = useGetVendorListQuery({
-    page: 0,
-    page_size: 80,
-    ...location,
-  });
-
-  //VARIABLES
-  const resultArr = data?.data.finalResult;
+  const { isLoading, isFetching } = useGetVendorListQuery(apiQuery);
 
   //REF
   const parentRef = useRef<HTMLDivElement>(null);
 
   //VIRTUAL LIST HOOK
-  const count = resultArr?.length ?? 0;
+  const count = vendorList?.length || 10;
   const virtualizer = useVirtualizer({
     count,
     getScrollElement: () => parentRef.current,
@@ -32,6 +29,11 @@ function RestaurantPage() {
   });
 
   const virtualizedVendorList = virtualizer.getVirtualItems();
+
+  //LOGICS
+  const onView = () => {
+    if (!isFetching) dispatch(setPage(apiQuery.page + 1));
+  };
 
   return (
     <div className={styles.main} ref={parentRef}>
@@ -47,14 +49,24 @@ function RestaurantPage() {
             transform: `translateY(${virtualizedVendorList[0]?.start ?? 0}px)`,
           }}
         >
-          {virtualizedVendorList?.map((virtualRow) => (
-            <ListItem
-              key={virtualRow.key}
-              data-index={virtualRow.index}
-              ref={virtualizer.measureElement}
-              data={resultArr?.[virtualRow.index]}
-            />
-          ))}
+          {virtualizedVendorList?.map((virtualRow) =>
+            isLoading ? (
+              <RestaurantCardLoading
+                key={virtualRow.key}
+                data-index={virtualRow.index}
+                ref={virtualizer.measureElement}
+              />
+            ) : (
+              <ListItem
+                key={virtualRow.key}
+                data-index={virtualRow.index}
+                ref={virtualizer.measureElement}
+                data={vendorList?.[virtualRow.index]}
+              />
+            )
+          )}
+
+          <EndPageObserver onView={onView} isLoading={isLoading} />
         </div>
       </div>
     </div>

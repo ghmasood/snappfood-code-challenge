@@ -1,8 +1,5 @@
-export interface IUserInfoStore {
-  location: ILocationStore;
-}
+import type { IVendorCardData } from './api/schema';
 
-export interface ILocationStore {
-  lat: number;
-  long: number;
+export interface IVendorsStore {
+  vendors: IVendorCardData[];
 }
