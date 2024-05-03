@@ -6,12 +6,12 @@ import Brand from 'components/Brand';
 
 import styles from './header.module.scss';
 
-type IListHeaderProps = {
+type ListHeaderProps = {
   className?: string;
   headerText: string;
 };
 
-const ListHeader = forwardRef<HTMLDivElement, IListHeaderProps>(({ className = '', headerText }, ref) => {
+const ListHeader = forwardRef<HTMLDivElement, ListHeaderProps>(({ className = '', headerText }, ref) => {
   return (
     <div ref={ref} className={clsx([styles.listHeader, className])}>
       <span>{headerText}</span>

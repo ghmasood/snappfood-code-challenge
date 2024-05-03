@@ -1,13 +1,13 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 
-import { IVendorListReq } from 'store/api/schema';
+import type { VendorListReq } from 'store/api/schema';
 
 const reducers = {
-  setLocation: (state: IVendorListReq, action: PayloadAction<Pick<IVendorListReq, 'lat' | 'long'>>) => {
+  setLocation: (state: VendorListReq, action: PayloadAction<Pick<VendorListReq, 'lat' | 'long'>>) => {
     return { ...state, ...action.payload };
   },
 
-  setPage: (state: IVendorListReq, action: PayloadAction<number>) => {
+  setPage: (state: VendorListReq, action: PayloadAction<number>) => {
     return { ...state, page: action.payload };
   },
 };

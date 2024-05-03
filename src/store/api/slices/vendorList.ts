@@ -1,10 +1,10 @@
 import { apiSlice } from '..';
 
-import { IVendorListReq, IVendorResult } from '../schema';
+import type { VendorListReq, VendorResult } from '../schema';
 
 export const vendorListApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    getVendorList: builder.query<IVendorResult, IVendorListReq>({
+    getVendorList: builder.query<VendorResult, VendorListReq>({
       query: (params) => ({
         url: '/mobile/v3/restaurant/vendors-list?&filters={"superType":[1]}',
         params,

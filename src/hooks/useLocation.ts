@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-type IGeoLocation = {
+type GeoLocation = {
   loading: boolean;
   lat: number | null;
   long: number | null;
@@ -8,7 +8,7 @@ type IGeoLocation = {
 };
 
 function useLocation(options: PositionOptions = {}) {
-  const [geoData, setGeoData] = useState<IGeoLocation>({
+  const [geoData, setGeoData] = useState<GeoLocation>({
     loading: true,
     lat: null,
     long: null,

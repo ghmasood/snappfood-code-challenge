@@ -1,5 +1,5 @@
-import type { IVendorCardData } from './api/schema';
+import type { VendorCardData } from './api/schema';
 
-export type IVendorsStore = {
-  vendors: IVendorCardData[];
+export type VendorsStore = {
+  vendors: VendorCardData[];
 };

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import clsx from 'clsx';
 
-import type { IVendorItem } from 'store/api/schema';
+import type { VendorItem } from 'store/api/schema';
 
 import { icons } from 'utils/icons';
 
@@ -18,12 +18,12 @@ import strings from '../../strings.json';
 
 import styles from './restaurantCard.module.scss';
 
-type IRestaurantCardProps = {
+type RestaurantCardProps = {
   className?: string;
-  data: IVendorItem;
+  data: VendorItem;
 };
 
-const RestaurantCard = forwardRef<HTMLDivElement, IRestaurantCardProps>(({ className = '', data }, ref) => {
+const RestaurantCard = forwardRef<HTMLDivElement, RestaurantCardProps>(({ className = '', data }, ref) => {
   const isFullyClose = !(data.preOrderEnabled || data.isOpen);
   return (
     <div ref={ref} className={clsx([styles.card, className])}>

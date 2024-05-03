@@ -8,7 +8,7 @@ import strings from '../../../../strings.json';
 
 import styles from './couponsList.module.scss';
 
-type ICouponsListProps = {
+type CouponsListProps = {
   className?: string;
   isEco: boolean;
   isCashback: boolean;
@@ -16,7 +16,7 @@ type ICouponsListProps = {
   isFirstBuy: boolean;
 };
 
-function CouponsList({ className = '', isEco, isCashback, couponCount, isFirstBuy }: ICouponsListProps) {
+function CouponsList({ className = '', isEco, isCashback, couponCount, isFirstBuy }: CouponsListProps) {
   if (!(isEco || isCashback || isFirstBuy || !!couponCount)) return;
   return (
     <div className={clsx([styles.list, className])}>

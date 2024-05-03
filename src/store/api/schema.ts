@@ -1,17 +1,17 @@
-export type IRequestResult<T> = {
+export type RequestResult<T> = {
   data: T;
   render_type: number;
   status: boolean;
 };
 
-export type IVendorListReq = {
+export type VendorListReq = {
   page: number;
   page_size: number;
   lat: number;
   long: number;
 };
 
-export type IVendorItem = {
+export type VendorItem = {
   id: number;
 
   logo: string;
@@ -43,16 +43,16 @@ export type IVendorItem = {
   deliveryFee: number;
 };
 
-export type IVendorCardData =
+export type VendorCardData =
   | { type: 'TEXT'; data: string }
-  | { type: 'VENDOR'; data: IVendorItem }
+  | { type: 'VENDOR'; data: VendorItem }
   | {
       type: 'BANNER';
       data: { image: string; deepLink: string };
     };
 
-export type IVendorListData = {
-  finalResult: IVendorCardData[];
+export type VendorListData = {
+  finalResult: VendorCardData[];
   count: number;
   open_count: number;
   extra_sections: unknown;
@@ -63,4 +63,4 @@ export type IVendorListData = {
   };
 };
 
-export type IVendorResult = IRequestResult<IVendorListData>;
+export type VendorResult = RequestResult<VendorListData>;

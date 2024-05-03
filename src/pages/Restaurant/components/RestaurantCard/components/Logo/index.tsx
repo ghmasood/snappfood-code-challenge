@@ -6,14 +6,14 @@ import { icons } from 'utils/icons';
 
 import styles from './logo.module.scss';
 
-type IRestaurantLogoProps = {
+type RestaurantLogoProps = {
   className?: string;
   profileSrc: string;
   isPro: boolean;
   isFullyClose: boolean;
 };
 
-function RestaurantLogo({ className = '', profileSrc, isFullyClose, isPro }: IRestaurantLogoProps) {
+function RestaurantLogo({ className = '', profileSrc, isFullyClose, isPro }: RestaurantLogoProps) {
   const [loaded, setLoaded] = useState(false);
 
   return (

@@ -8,7 +8,7 @@ import strings from '../../../../strings.json';
 
 import styles from './cover.module.scss';
 
-type IRestaurantCoverProps = {
+type RestaurantCoverProps = {
   className?: string;
   coverSrc: string;
   proText: string;
@@ -16,7 +16,7 @@ type IRestaurantCoverProps = {
   isFullyClose: boolean;
 };
 
-function RestaurantCover({ className = '', coverSrc, proText, isAd, isFullyClose }: IRestaurantCoverProps) {
+function RestaurantCover({ className = '', coverSrc, proText, isAd, isFullyClose }: RestaurantCoverProps) {
   const [loaded, setLoaded] = useState(false);
   return (
     <div className={clsx([styles.cover, className])}>

@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { vendorListApiSlice } from 'store/api/slices/vendorList';
-import { IVendorsStore } from 'store/type';
+import type { VendorsStore } from 'store/type';
 
-export const vendorsInitialState: IVendorsStore = {
+export const vendorsInitialState: VendorsStore = {
   vendors: [],
 };
 

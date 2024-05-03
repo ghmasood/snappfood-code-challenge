@@ -4,13 +4,13 @@ import clsx from 'clsx';
 
 import styles from './coupon.module.scss';
 
-type ICouponItemProps = {
+type CouponItemProps = {
   className?: string;
   title: string;
   icon?: ReactNode;
 };
 
-function CouponItem({ className = '', title, icon }: ICouponItemProps) {
+function CouponItem({ className = '', title, icon }: CouponItemProps) {
   return (
     <div className={clsx([styles.coupon, className])}>
       {icon}

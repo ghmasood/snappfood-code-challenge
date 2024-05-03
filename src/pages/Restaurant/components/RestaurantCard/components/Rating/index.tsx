@@ -4,14 +4,14 @@ import strings from '../../../../strings.json';
 
 import styles from './rating.module.scss';
 
-type IRatingProps = {
+type RatingProps = {
   className?: string;
   voteCount: number;
   rate: number;
   isNew: boolean;
 };
 
-function Rating({ isNew, rate, voteCount }: IRatingProps) {
+function Rating({ isNew, rate, voteCount }: RatingProps) {
   return (
     <div className={styles.main}>
       {!isNew && (

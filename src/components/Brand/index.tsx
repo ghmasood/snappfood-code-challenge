@@ -1,12 +1,12 @@
 import Icon from './icon.svg?react';
 import Logo from './logo.svg?react';
 
-type IIconProps = {
+type IconProps = {
   className?: string;
   variant: 'logo' | 'icon';
 };
 
-function Brand({ className = '', variant }: IIconProps) {
+function Brand({ className = '', variant }: IconProps) {
   return variant === 'icon' ? (
     <Icon className={className} />
   ) : variant === 'logo' ? (

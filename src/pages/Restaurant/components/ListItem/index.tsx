@@ -1,17 +1,17 @@
 import { forwardRef } from 'react';
 
-import type { IVendorCardData } from 'store/api/schema';
+import type { VendorCardData } from 'store/api/schema';
 
 import Banner from '../Banner';
 import ListHeader from '../ListHeader';
 import RestaurantCard from '../RestaurantCard';
 
-type IListItemProps = {
+type ListItemProps = {
   className?: string;
-  data: IVendorCardData | undefined;
+  data: VendorCardData | undefined;
 };
 
-const ListItem = forwardRef<HTMLDivElement, IListItemProps>(({ data }, ref) => {
+const ListItem = forwardRef<HTMLDivElement, ListItemProps>(({ data }, ref) => {
   if (data?.type === 'BANNER') return <Banner ref={ref} imageSrc={data.data.image} />;
 
   if (data?.type === 'TEXT') return <ListHeader ref={ref} headerText={data.data} />;
