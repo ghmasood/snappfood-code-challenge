@@ -1,19 +1,17 @@
-export interface IRequestResult<T> {
+export type IRequestResult<T> = {
   data: T;
   render_type: number;
   status: boolean;
-}
+};
 
-// REQUEST
-export interface IVendorListReq {
+export type IVendorListReq = {
   page: number;
   page_size: number;
   lat: number;
   long: number;
-}
+};
 
-//RESPONSE
-export interface IVendorItem {
+export type IVendorItem = {
   id: number;
 
   logo: string;
@@ -29,21 +27,21 @@ export interface IVendorItem {
 
   discountValueForView: number;
 
-  has_coupon: boolean; //دارای کوپن ------- done
-  has_cashback: boolean; //جایزه خرید ----- done
-  has_discount: boolean; //دارای تخفیف
-  coupon_count: number; //دارای n کوپن ---- done
-  has_first_coupon: boolean; //تخفیف سفارش اول -- done
-  is_pro: boolean; //فودپرو
-  is_eco: boolean; //خوش‌قیمت --- done
-  preOrderEnabled: boolean; // رستوران بسته است / فقط پیش سفارش
+  has_coupon: boolean;
+  has_cashback: boolean;
+  has_discount: boolean;
+  coupon_count: number;
+  has_first_coupon: boolean;
+  is_pro: boolean;
+  is_eco: boolean;
+  preOrderEnabled: boolean;
   isOpen: boolean;
-  bid: boolean; //آگهی بج
+  bid: boolean;
   best_coupon: string | null;
 
-  isZFExpress: boolean; //پیک اسنپ‌فود --- done
+  isZFExpress: boolean;
   deliveryFee: number;
-}
+};
 
 export type IVendorCardData =
   | { type: 'TEXT'; data: string }
@@ -53,7 +51,7 @@ export type IVendorCardData =
       data: { image: string; deepLink: string };
     };
 
-export interface IVendorListData {
+export type IVendorListData = {
   finalResult: IVendorCardData[];
   count: number;
   open_count: number;
@@ -63,6 +61,6 @@ export interface IVendorListData {
     header: string;
     description: string;
   };
-}
+};
 
 export type IVendorResult = IRequestResult<IVendorListData>;

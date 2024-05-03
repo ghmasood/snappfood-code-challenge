@@ -1,5 +1,5 @@
 import type { IVendorCardData } from './api/schema';
 
-export interface IVendorsStore {
+export type IVendorsStore = {
   vendors: IVendorCardData[];
-}
+};

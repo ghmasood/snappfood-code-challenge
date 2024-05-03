@@ -1,13 +1,15 @@
 import { icons } from 'utils/icons';
 
+import strings from '../../../../strings.json';
+
 import styles from './rating.module.scss';
 
-interface IRatingProps {
+type IRatingProps = {
   className?: string;
   voteCount: number;
   rate: number;
   isNew: boolean;
-}
+};
 
 function Rating({ isNew, rate, voteCount }: IRatingProps) {
   return (
@@ -22,7 +24,7 @@ function Rating({ isNew, rate, voteCount }: IRatingProps) {
 
       <div className={styles.main__rate}>
         {isNew ? (
-          'جدید'
+          strings.new
         ) : (
           <>
             {icons.star()}

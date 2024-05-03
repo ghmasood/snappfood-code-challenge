@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 
-interface IGeoLocation {
+type IGeoLocation = {
   loading: boolean;
   lat: number | null;
   long: number | null;
   error: GeolocationPositionError | null;
-}
+};
 
 function useLocation(options: PositionOptions = {}) {
-  //STATES
   const [geoData, setGeoData] = useState<IGeoLocation>({
     loading: true,
     lat: null,
@@ -16,10 +15,8 @@ function useLocation(options: PositionOptions = {}) {
     error: null,
   });
 
-  //REFS
   const optionsRef = useRef(options);
 
-  //LIFE CYCLE HOOKS
   useEffect(() => {
     const onEvent: PositionCallback = ({ coords }) => {
       setGeoData({

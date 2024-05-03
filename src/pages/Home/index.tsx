@@ -6,8 +6,7 @@ import BasicButton from 'components/BasicButton';
 import Brand from 'components/Brand';
 
 import styles from './main.module.scss';
-
-import strings from 'pages/Home/strings.json';
+import strings from './strings.json';
 
 function HomePage() {
   return (

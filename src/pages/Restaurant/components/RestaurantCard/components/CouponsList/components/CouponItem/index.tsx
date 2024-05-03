@@ -4,11 +4,11 @@ import clsx from 'clsx';
 
 import styles from './coupon.module.scss';
 
-interface ICouponItemProps {
+type ICouponItemProps = {
   className?: string;
   title: string;
   icon?: ReactNode;
-}
+};
 
 function CouponItem({ className = '', title, icon }: ICouponItemProps) {
   return (

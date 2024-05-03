@@ -4,24 +4,26 @@ import { icons } from 'utils/icons';
 
 import CouponItem from './components/CouponItem';
 
+import strings from '../../../../strings.json';
+
 import styles from './couponsList.module.scss';
 
-interface ICouponsListProps {
+type ICouponsListProps = {
   className?: string;
   isEco: boolean;
   isCashback: boolean;
   couponCount: number;
   isFirstBuy: boolean;
-}
+};
 
 function CouponsList({ className = '', isEco, isCashback, couponCount, isFirstBuy }: ICouponsListProps) {
   if (!(isEco || isCashback || isFirstBuy || !!couponCount)) return;
   return (
     <div className={clsx([styles.list, className])}>
-      {!!couponCount && <CouponItem title={`دارای ${couponCount} کوپن`} />}
-      {isCashback && <CouponItem title={'جایزه خرید'} icon={icons.cashback()} />}
-      {isEco && <CouponItem title={'خوش قیمت'} icon={icons.eco()} />}
-      {isFirstBuy && <CouponItem title={'تخفیف سفارش اول'} />}
+      {!!couponCount && <CouponItem title={strings.haveCoupon.replace('$$$', couponCount.toString())} />}
+      {isCashback && <CouponItem title={strings.cashback} icon={icons.cashback()} />}
+      {isEco && <CouponItem title={strings.goodPrice} icon={icons.eco()} />}
+      {isFirstBuy && <CouponItem title={strings.firstOrder} />}
     </div>
   );
 }

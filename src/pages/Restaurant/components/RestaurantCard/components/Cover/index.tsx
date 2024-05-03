@@ -4,18 +4,19 @@ import clsx from 'clsx';
 
 import { icons } from 'utils/icons';
 
+import strings from '../../../../strings.json';
+
 import styles from './cover.module.scss';
 
-interface IRestaurantCoverProps {
+type IRestaurantCoverProps = {
   className?: string;
   coverSrc: string;
   proText: string;
   isAd: boolean;
   isFullyClose: boolean;
-}
+};
 
 function RestaurantCover({ className = '', coverSrc, proText, isAd, isFullyClose }: IRestaurantCoverProps) {
-  //STATES
   const [loaded, setLoaded] = useState(false);
   return (
     <div className={clsx([styles.cover, className])}>
@@ -28,11 +29,11 @@ function RestaurantCover({ className = '', coverSrc, proText, isAd, isFullyClose
 
       {isAd && !isFullyClose && (
         <div className={styles.cover__ad}>
-          آگهی
+          {strings.ad}
           {icons.ad()}
         </div>
       )}
-      {isFullyClose && <div className={styles.cover__closedText}>رستوران بسته است</div>}
+      {isFullyClose && <div className={styles.cover__closedText}>{strings.closed}</div>}
       <div className={styles.cover__imageContainer}>
         <img
           src={coverSrc}

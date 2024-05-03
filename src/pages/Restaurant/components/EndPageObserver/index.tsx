@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 
 import RestaurantCardLoading from '../ResturantCardLoading';
 
-interface IEndPageObserverProps {
+type IEndPageObserverProps = {
   onView: () => void;
   isEnable: boolean;
-}
+};
 
 function EndPageObserver({ onView, isEnable }: IEndPageObserverProps) {
   const loadingCardRef = useRef<HTMLDivElement>(null);

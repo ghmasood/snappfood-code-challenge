@@ -4,18 +4,19 @@ import BasicButton from 'components/BasicButton';
 import Brand from 'components/Brand';
 
 import styles from './notFound.module.scss';
+import strings from './strings.json';
 
 function NotFoundPage() {
   return (
     <div className={styles.main}>
       <div className={styles.main__oopsContainer}>
-        oops
+        {strings.oops}
         <Brand variant='icon' className={styles.main__icon} />
       </div>
-      <span className={styles.main__404}>404</span>
-      <span className={styles.main__text}>به نظر می‌آید شما گم شده اید :(</span>
+      <span className={styles.main__404}>{strings._404}</span>
+      <span className={styles.main__text}>{strings.description}</span>
       <Link to='/'>
-        <BasicButton className={styles.main__button}>برگشت به خانه</BasicButton>
+        <BasicButton className={styles.main__button}>{strings.backHome}</BasicButton>
       </Link>
     </div>
   );

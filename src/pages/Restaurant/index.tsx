@@ -14,28 +14,22 @@ import RestaurantCardLoading from './components/ResturantCardLoading';
 import styles from './main.module.scss';
 
 function RestaurantPage() {
-  //LOCATION HOOK
   const { lat, long, loading: isGeoLoading } = useLocation();
 
-  //STORE
   const apiQuery = useAppSelector((store) => store.apiQuery);
   const vendorList = useAppSelector((store) => store.vendors.vendors);
   const dispatch = useAppDispatch();
 
-  //LIFE CYCLE METHODS
   useEffect(() => {
     if (!isGeoLoading && lat && long) {
       dispatch(setLocation({ lat: lat, long: long }));
     }
   }, [lat, long, isGeoLoading, dispatch]);
 
-  //RTK QUERY
   const { isLoading, isFetching, isError } = useGetVendorListQuery(apiQuery, { skip: isGeoLoading });
 
-  //REF
   const parentRef = useRef<HTMLDivElement>(null);
 
-  //VIRTUAL LIST HOOK
   const count = vendorList?.length || 10;
   const virtualizer = useVirtualizer({
     count,
@@ -46,10 +40,8 @@ function RestaurantPage() {
 
   const virtualizedVendorList = virtualizer.getVirtualItems();
 
-  //VARIABLES
   const isEnableObserver = isLoading || isFetching || isError || isGeoLoading;
 
-  //LOGICS
   const onView = () => {
     dispatch(setPage(apiQuery.page + 1));
   };
@@ -72,12 +64,9 @@ function RestaurantPage() {
             isLoading ? (
               <RestaurantCardLoading key={virtualRow.key} data-index={virtualRow.index} />
             ) : (
-              <ListItem
-                key={virtualRow.key}
-                data-index={virtualRow.index}
-                ref={virtualizer.measureElement}
-                data={vendorList?.[virtualRow.index]}
-              />
+              <div key={virtualRow.key} data-index={virtualRow.index} ref={virtualizer.measureElement}>
+                <ListItem data={vendorList?.[virtualRow.index]} />
+              </div>
             )
           )}
 

@@ -6,10 +6,10 @@ import Brand from 'components/Brand';
 
 import styles from './header.module.scss';
 
-interface IListHeaderProps {
+type IListHeaderProps = {
   className?: string;
   headerText: string;
-}
+};
 
 const ListHeader = forwardRef<HTMLDivElement, IListHeaderProps>(({ className = '', headerText }, ref) => {
   return (

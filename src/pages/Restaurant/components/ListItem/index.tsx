@@ -6,10 +6,10 @@ import Banner from '../Banner';
 import ListHeader from '../ListHeader';
 import RestaurantCard from '../RestaurantCard';
 
-interface IListItemProps {
+type IListItemProps = {
   className?: string;
   data: IVendorCardData | undefined;
-}
+};
 
 const ListItem = forwardRef<HTMLDivElement, IListItemProps>(({ data }, ref) => {
   if (data?.type === 'BANNER') return <Banner ref={ref} imageSrc={data.data.image} />;

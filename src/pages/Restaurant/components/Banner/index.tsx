@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import styles from './banner.module.scss';
 
 const Banner = forwardRef<HTMLDivElement, { imageSrc: string }>(({ imageSrc }, ref) => {
-  //STATES
   const [loaded, setLoaded] = useState(false);
 
   return (
