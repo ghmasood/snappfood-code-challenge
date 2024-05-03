@@ -1,0 +1,7 @@
+# docker-compose.yaml
+services:
+  frontend:
+    build: .
+    container_name: snappfood
+    ports:
+      - '3000:3000'
