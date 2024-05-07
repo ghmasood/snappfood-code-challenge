@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { vendorListApiSlice } from 'store/api/slices/vendorList';
 import type { VendorsStore } from 'store/type';
 
+import reducers from './reducer';
+
 export const vendorsInitialState: VendorsStore = {
   vendors: [],
 };
@@ -10,7 +12,7 @@ export const vendorsInitialState: VendorsStore = {
 export const vendorsSlice = createSlice({
   name: 'vendors',
   initialState: vendorsInitialState,
-  reducers: {},
+  reducers: { ...reducers },
   extraReducers(builder) {
     builder.addMatcher(
       vendorListApiSlice.endpoints.getVendorList.matchFulfilled,
@@ -27,5 +29,5 @@ export const vendorsSlice = createSlice({
     );
   },
 });
-
+export const { clearVendors } = vendorsSlice.actions;
 export const vendorsReducer = vendorsSlice.reducer;

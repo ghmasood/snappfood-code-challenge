@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { useVirtualizer } from '@tanstack/react-virtual';
 
-import { setLocation, setPage, useAppDispatch, useAppSelector } from 'store';
+import { clearVendors, setPage, useAppDispatch, useAppSelector } from 'store';
 import { useGetVendorListQuery } from 'store/api/slices/vendorList';
 
 import useLocation from 'hooks/useLocation';
@@ -21,13 +21,17 @@ function RestaurantPage() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!isGeoLoading && lat && long) {
-      dispatch(setLocation({ lat: lat, long: long }));
+    if (!isGeoLoading) {
+      dispatch(clearVendors());
     }
   }, [lat, long, isGeoLoading, dispatch]);
 
-  const { isLoading, isFetching, isError } = useGetVendorListQuery(apiQuery, { skip: isGeoLoading });
-
+  const { isLoading, isFetching, isError } = useGetVendorListQuery(
+    { ...apiQuery, lat, long },
+    {
+      skip: isGeoLoading,
+    }
+  );
   const parentRef = useRef<HTMLDivElement>(null);
 
   const count = vendorList?.length || 10;

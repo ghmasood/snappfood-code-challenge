@@ -7,8 +7,8 @@ export type RequestResult<T> = {
 export type VendorListReq = {
   page: number;
   page_size: number;
-  lat: number;
-  long: number;
+  lat: number | null;
+  long: number | null;
 };
 
 export type VendorItem = {

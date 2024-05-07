@@ -1,12 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { VendorListReq } from 'store/api/schema';
+import type { QueryStore } from 'store/type';
 
 import reducers from './reducers';
 
-export const apiQueryInitialState: VendorListReq = {
-  lat: 35.77364,
-  long: 51.41831,
+export const apiQueryInitialState: QueryStore = {
   page_size: 10,
   page: 0,
 };
@@ -19,6 +17,6 @@ export const apiQuerySlice = createSlice({
   },
 });
 
-export const { setLocation, setPage } = apiQuerySlice.actions;
+export const { setPage } = apiQuerySlice.actions;
 
 export const apiQueryReducer = apiQuerySlice.reducer;
